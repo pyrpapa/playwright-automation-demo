@@ -6,20 +6,6 @@ namespace PlaywrightAutomationDemo;
 [TestFixture]
 public class SmokeTests : PageTest
 {
-
-    public override BrowserNewContextOptions ContextOptions()
-{
-    return new BrowserNewContextOptions();
-}
-
-    public override async Task<IBrowser> NewBrowserAsync()
-    {
-        return await Playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
-        {
-            Headless = false,
-            SlowMo = 500
-        });
-    }
     [Test]
     public async Task HomePageLoads()
     {
