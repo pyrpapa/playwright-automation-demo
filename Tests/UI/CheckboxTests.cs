@@ -2,7 +2,7 @@ using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
 using PlaywrightAutomationDemo.Pages;
 
-namespace PlaywrightAutomationDemo.Tests;
+namespace PlaywrightAutomationDemo.Tests.UI;
 
 [TestFixture]
 public class CheckboxTests : PageTest

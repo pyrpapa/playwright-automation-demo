@@ -7,7 +7,7 @@ using FluentAssertions;
 using PlaywrightAutomationDemo.Models;
 
 
-namespace PlaywrightAutomationDemo.Tests;
+namespace PlaywrightAutomationDemo.Tests.API;
 
 [TestFixture]
 public class ApiTests : PlaywrightTest
