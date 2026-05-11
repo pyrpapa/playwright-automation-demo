@@ -1,5 +1,6 @@
 using Microsoft.Playwright;
 using PlaywrightAutomationDemo.Config;
+
 namespace PlaywrightAutomationDemo.Pages;
 
 public class CheckboxPage

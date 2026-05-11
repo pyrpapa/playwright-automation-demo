@@ -36,8 +36,8 @@ public class CheckboxTests : PageTest
         if (!await _checkboxPage.IsSecondCheckedAsync())
             await _checkboxPage.ClickSecondCheckboxAsync();
 
-        TestContext.Out.WriteLine("First checked: " + await _checkboxPage.IsFirstCheckedAsync());
-        TestContext.Out.WriteLine("Second checked: " + await _checkboxPage.IsSecondCheckedAsync());
+        Console.WriteLine("First checked: " + await _checkboxPage.IsFirstCheckedAsync());
+        Console.WriteLine("Second checked: " + await _checkboxPage.IsSecondCheckedAsync());
 
         Assert.That(await _checkboxPage.IsFirstCheckedAsync(), Is.True);
         Assert.That(await _checkboxPage.IsSecondCheckedAsync(), Is.True);
