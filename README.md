@@ -18,6 +18,8 @@ API testing, and database validation using Playwright, Dapper, and SQLite.
 - **GitHub Actions** — CI/CD pipeline
 
 ## Project Structure
+
+```
 playwright-automation-demo/
 ├── .github/workflows/
 │   └── tests.yml    # CI pipeline
@@ -33,6 +35,7 @@ playwright-automation-demo/
 │   ├── UI/          # UI tests (login, checkbox, file upload, auth)
 │   └── DatabaseTests.cs
 └── README.md
+```
 
 ## Setup
 1. Clone the repo
@@ -40,9 +43,9 @@ playwright-automation-demo/
 ```powershell
 dotnet restore
 ```
-3. Install Playwright browsers
+3. Install Playwright browsers (run `dotnet build` first so `playwright.ps1` exists)
 ```powershell
-pwsh bin/Debug/net10.0/.playwright/package/bin/playwright.ps1 install
+pwsh bin/Debug/net10.0/playwright.ps1 install
 ```
 
 ## Running Tests
