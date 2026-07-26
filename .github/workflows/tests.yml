@@ -36,7 +36,16 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Install Playwright browsers
-        run: pwsh bin/Debug/net10.0/.playwright/package/bin/playwright.ps1 install --with-deps
+        run: |
+          PW_SCRIPT=$(find . -path "*/.playwright/package/bin/playwright.ps1" -print -quit)
+          if [ -z "$PW_SCRIPT" ]; then
+            echo "::error::Could not find playwright.ps1 under any bin/ output folder."
+            echo "Contents of bin/ (up to 4 levels deep) for debugging:"
+            find bin -maxdepth 4 2>/dev/null || echo "(no bin/ directory - did the build step succeed?)"
+            exit 1
+          fi
+          echo "Found $PW_SCRIPT"
+          pwsh "$PW_SCRIPT" install --with-deps
 
       - name: Restore previous dashboard history
         run: |
