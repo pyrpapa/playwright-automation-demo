@@ -37,9 +37,9 @@ jobs:
 
       - name: Install Playwright browsers
         run: |
-          PW_SCRIPT=$(find . -path "*/.playwright/package/bin/playwright.ps1" -print -quit)
+          PW_SCRIPT=$(find bin -maxdepth 4 -name "playwright.ps1" -print -quit)
           if [ -z "$PW_SCRIPT" ]; then
-            echo "::error::Could not find playwright.ps1 under any bin/ output folder."
+            echo "::error::Could not find playwright.ps1 under bin/."
             echo "Contents of bin/ (up to 4 levels deep) for debugging:"
             find bin -maxdepth 4 2>/dev/null || echo "(no bin/ directory - did the build step succeed?)"
             exit 1
