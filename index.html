@@ -101,10 +101,10 @@
     .stat-value.pass    { color: var(--pass); }
     .stat-value.fail    { color: var(--fail); }
     .stat-value.neutral { color: #e6edf3; }
-    .stat-value.rate    { color: var(--warn); }
+    .stat-value.rate    { color: var(--pass); }
 
     .progress-bar { height: 3px; background: var(--border); display: flex; }
-    .progress-pass { background: var(--pass); width: 90%; }
+    .progress-pass { background: var(--pass); width: 100%; }
     .progress-fail { background: var(--fail); flex: 1; }
 
     .main { padding: 32px 40px; max-width: 960px; }
@@ -253,10 +253,10 @@
     <div class="repo-label">playwright-automation-demo</div>
     <h1>Test results</h1>
     <div class="meta-line">
-      <span>commit <span style="color:var(--accent)">e7bee97</span></span>
+      <span>commit <span style="color:var(--accent)">e112155</span></span>
       <span class="meta-sep">·</span>
-      <span>Sun, 26 Jul 2026 17:17:19 GMT</span>
-      <span class="meta-sep">·</span><a href="https://github.com/pyrpapa/playwright-automation-demo/actions/runs/30212195509" target="_blank">view run ↗</a>
+      <span>Sun, 26 Jul 2026 17:23:50 GMT</span>
+      <span class="meta-sep">·</span><a href="https://github.com/pyrpapa/playwright-automation-demo/actions/runs/30212420654" target="_blank">view run ↗</a>
     </div>
   </header>
 
@@ -268,15 +268,15 @@
   <div class="stats">
     <div class="stat">
       <div class="stat-label">Pass rate</div>
-      <div class="stat-value rate">90%</div>
+      <div class="stat-value rate">100%</div>
     </div>
     <div class="stat">
       <div class="stat-label">Passed</div>
-      <div class="stat-value pass">28</div>
+      <div class="stat-value pass">31</div>
     </div>
     <div class="stat">
       <div class="stat-label">Failed</div>
-      <div class="stat-value fail">3</div>
+      <div class="stat-value fail">0</div>
     </div>
     <div class="stat">
       <div class="stat-label">Total tests</div>
@@ -284,104 +284,19 @@
     </div>
     <div class="stat">
       <div class="stat-label">Duration</div>
-      <div class="stat-value neutral" style="font-size:20px">19.72s</div>
+      <div class="stat-value neutral" style="font-size:20px">19.90s</div>
     </div>
   </div>
 
   <main class="main">
 
-    <div class="section-label">Run history — last 5 runs</div>
+    <div class="section-label">Run history — last 6 runs</div>
     <div class="history-chart">
       <canvas id="historyChart" height="90"></canvas>
     </div>
 
     <div class="section-label">Test suites — 10 suites</div>
     
-    <div class="suite-card suite-has-failures">
-      <div class="suite-header">
-        <span class="suite-name">FileDownloadTests</span>
-        <div class="suite-meta">
-          <span class="badge badge-fail">3 failed</span>
-          <span class="badge badge-pass">2 passed</span>
-          <span class="badge badge-count">5 total</span>
-        </div>
-      </div>
-      <div class="suite-tests">
-        <div class="test-row failed">
-          <div class="test-row-header">
-            <span class="icon fail-icon">✗</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">737ms</span>
-          </div>
-          <div class="error-block">
-            <div class="error-message">Microsoft.Playwright.PlaywrightException : Error: strict mode violation: GetByRole(AriaRole.Link, new() { Name = &quot;test.txt&quot; }) resolved to 2 elements:&amp;#xA;    1) &lt;a href=&quot;download/test.txt&quot;&gt;test.txt&lt;/a&gt; aka GetByRole(AriaRole.Link, new() { Name = &quot;test.txt&quot;, Exact = true })&amp;#xA;    2) &lt;a href=&quot;download/upload-test.txt&quot;&gt;upload-test.txt&lt;/a&gt; aka GetByRole(AriaRole.Link, new() { Name = &quot;upload-test.txt&quot; })&amp;#xA;&amp;#xA;Call log:&amp;#xA;    - checking visibility of GetByRole(AriaRole.Link, new() { Name = &quot;test.txt&quot; })</div>
-            <pre class="stack-trace">at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
-   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 505
-   at Microsoft.Playwright.Core.Frame.IsVisibleAsync(String selector, FrameIsVisibleOptions options) in /_/src/Playwright/Core/Frame.cs:line 869
-   at PlaywrightAutomationDemo.Tests.FileDownloadPage.IsFileLinkVisibleAsync(String fileName) in /home/runner/work/playwright-automation-demo/playwright-automation-demo/Pages/FileDownloadPage.cs:line 41
-   at PlaywrightAutomationDemo.Tests.FileDownloadTests.NavigateAsync_OnPageLoad_SampleUploadTxtLinkIsVisible() in /home/runner/work/playwright-automation-demo/playwright-automation-demo/Tests/UI/FileDownloadTests.cs:line 42
-   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
-   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
-   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
-   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
-   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</pre>
-           </div>
-        </div>
-        <div class="test-row failed">
-          <div class="test-row-header">
-            <span class="icon fail-icon">✗</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">898ms</span>
-          </div>
-          <div class="error-block">
-            <div class="error-message">Microsoft.Playwright.PlaywrightException : Error: strict mode violation: GetByRole(AriaRole.Link, new() { Name = &quot;test.txt&quot; }) resolved to 2 elements:&amp;#xA;    1) &lt;a href=&quot;download/test.txt&quot;&gt;test.txt&lt;/a&gt; aka GetByRole(AriaRole.Link, new() { Name = &quot;test.txt&quot;, Exact = true })&amp;#xA;    2) &lt;a href=&quot;download/upload-test.txt&quot;&gt;upload-test.txt&lt;/a&gt; aka GetByRole(AriaRole.Link, new() { Name = &quot;upload-test.txt&quot; })&amp;#xA;&amp;#xA;Call log:&amp;#xA;  - waiting for GetByRole(AriaRole.Link, new() { Name = &quot;test.txt&quot; })</div>
-            <pre class="stack-trace">at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
-   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 505
-   at PlaywrightAutomationDemo.Tests.FileDownloadPage.ClickFileAndVerifyDownloadAsync(String fileName) in /home/runner/work/playwright-automation-demo/playwright-automation-demo/Pages/FileDownloadPage.cs:line 48
-   at PlaywrightAutomationDemo.Tests.FileDownloadTests.ClickSampleUploadTxtAndVerifyDownloadAsync_ValidFileLink_DownloadPathIsNotEmpty() in /home/runner/work/playwright-automation-demo/playwright-automation-demo/Tests/UI/FileDownloadTests.cs:line 57
-   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
-   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
-   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
-   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
-   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</pre>
-           </div>
-        </div>
-        <div class="test-row failed">
-          <div class="test-row-header">
-            <span class="icon fail-icon">✗</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">776ms</span>
-          </div>
-          <div class="error-block">
-            <div class="error-message">Microsoft.Playwright.PlaywrightException : Error: strict mode violation: GetByRole(AriaRole.Link, new() { Name = &quot;test.txt&quot; }) resolved to 2 elements:&amp;#xA;    1) &lt;a href=&quot;download/test.txt&quot;&gt;test.txt&lt;/a&gt; aka GetByRole(AriaRole.Link, new() { Name = &quot;test.txt&quot;, Exact = true })&amp;#xA;    2) &lt;a href=&quot;download/upload-test.txt&quot;&gt;upload-test.txt&lt;/a&gt; aka GetByRole(AriaRole.Link, new() { Name = &quot;upload-test.txt&quot; })&amp;#xA;&amp;#xA;Call log:&amp;#xA;  - waiting for GetByRole(AriaRole.Link, new() { Name = &quot;test.txt&quot; })</div>
-            <pre class="stack-trace">at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
-   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 505
-   at PlaywrightAutomationDemo.Tests.FileDownloadPage.ClickFileAndVerifyDownloadAsync(String fileName) in /home/runner/work/playwright-automation-demo/playwright-automation-demo/Pages/FileDownloadPage.cs:line 48
-   at PlaywrightAutomationDemo.Tests.FileDownloadTests.ClickSampleUploadTxtAndVerifyDownloadAsync_ValidFileLink_DownloadedFileExists() in /home/runner/work/playwright-automation-demo/playwright-automation-demo/Tests/UI/FileDownloadTests.cs:line 65
-   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
-   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
-   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
-   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
-   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</pre>
-           </div>
-        </div>
-        <div class="test-row passed">
-          <div class="test-row-header">
-            <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">851ms</span>
-          </div>
-          
-        </div>
-        <div class="test-row passed">
-          <div class="test-row-header">
-            <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">703ms</span>
-          </div>
-          
-        </div></div>
-    </div>
     <div class="suite-card ">
       <div class="suite-header">
         <span class="suite-name">SmokeTests</span>
@@ -396,7 +311,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.SmokeTests</span>
-            <span class="test-time">2.63s</span>
+            <span class="test-time">2.54s</span>
           </div>
           
         </div>
@@ -404,7 +319,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.SmokeTests</span>
-            <span class="test-time">615ms</span>
+            <span class="test-time">662ms</span>
           </div>
           
         </div>
@@ -412,7 +327,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.SmokeTests</span>
-            <span class="test-time">775ms</span>
+            <span class="test-time">816ms</span>
           </div>
           
         </div></div>
@@ -431,7 +346,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.API.ApiTests</span>
-            <span class="test-time">673ms</span>
+            <span class="test-time">657ms</span>
           </div>
           
         </div></div>
@@ -450,7 +365,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">50ms</span>
+            <span class="test-time">53ms</span>
           </div>
           
         </div>
@@ -458,7 +373,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">26ms</span>
+            <span class="test-time">28ms</span>
           </div>
           
         </div>
@@ -466,7 +381,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">51ms</span>
+            <span class="test-time">55ms</span>
           </div>
           
         </div>
@@ -474,7 +389,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">114ms</span>
+            <span class="test-time">120ms</span>
           </div>
           
         </div></div>
@@ -493,7 +408,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.Database.DatabaseTests</span>
-            <span class="test-time">43ms</span>
+            <span class="test-time">42ms</span>
           </div>
           
         </div>
@@ -501,7 +416,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.Database.DatabaseTests</span>
-            <span class="test-time">4ms</span>
+            <span class="test-time">5ms</span>
           </div>
           
         </div>
@@ -536,7 +451,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">656ms</span>
+            <span class="test-time">682ms</span>
           </div>
           
         </div>
@@ -544,7 +459,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">783ms</span>
+            <span class="test-time">750ms</span>
           </div>
           
         </div>
@@ -552,7 +467,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">553ms</span>
+            <span class="test-time">585ms</span>
           </div>
           
         </div>
@@ -560,7 +475,58 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">554ms</span>
+            <span class="test-time">581ms</span>
+          </div>
+          
+        </div></div>
+    </div>
+    <div class="suite-card ">
+      <div class="suite-header">
+        <span class="suite-name">FileDownloadTests</span>
+        <div class="suite-meta">
+          
+          <span class="badge badge-pass">5 passed</span>
+          <span class="badge badge-count">5 total</span>
+        </div>
+      </div>
+      <div class="suite-tests">
+        <div class="test-row passed">
+          <div class="test-row-header">
+            <span class="icon pass-icon">✓</span>
+            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
+            <span class="test-time">815ms</span>
+          </div>
+          
+        </div>
+        <div class="test-row passed">
+          <div class="test-row-header">
+            <span class="icon pass-icon">✓</span>
+            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
+            <span class="test-time">857ms</span>
+          </div>
+          
+        </div>
+        <div class="test-row passed">
+          <div class="test-row-header">
+            <span class="icon pass-icon">✓</span>
+            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
+            <span class="test-time">760ms</span>
+          </div>
+          
+        </div>
+        <div class="test-row passed">
+          <div class="test-row-header">
+            <span class="icon pass-icon">✓</span>
+            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
+            <span class="test-time">731ms</span>
+          </div>
+          
+        </div>
+        <div class="test-row passed">
+          <div class="test-row-header">
+            <span class="icon pass-icon">✓</span>
+            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
+            <span class="test-time">777ms</span>
           </div>
           
         </div></div>
@@ -579,7 +545,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.BasicAuthTests</span>
-            <span class="test-time">337ms</span>
+            <span class="test-time">287ms</span>
           </div>
           
         </div>
@@ -587,7 +553,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.BasicAuthTests</span>
-            <span class="test-time">579ms</span>
+            <span class="test-time">606ms</span>
           </div>
           
         </div></div>
@@ -606,7 +572,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.CheckboxTests</span>
-            <span class="test-time">602ms</span>
+            <span class="test-time">606ms</span>
           </div>
           
         </div>
@@ -614,7 +580,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.CheckboxTests</span>
-            <span class="test-time">562ms</span>
+            <span class="test-time">614ms</span>
           </div>
           
         </div>
@@ -622,7 +588,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.CheckboxTests</span>
-            <span class="test-time">547ms</span>
+            <span class="test-time">580ms</span>
           </div>
           
         </div></div>
@@ -641,7 +607,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.FileUpload</span>
-            <span class="test-time">543ms</span>
+            <span class="test-time">594ms</span>
           </div>
           
         </div>
@@ -668,7 +634,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.LoginTests</span>
-            <span class="test-time">805ms</span>
+            <span class="test-time">777ms</span>
           </div>
           
         </div>
@@ -676,7 +642,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.LoginTests</span>
-            <span class="test-time">805ms</span>
+            <span class="test-time">818ms</span>
           </div>
           
         </div>
@@ -684,7 +650,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.LoginTests</span>
-            <span class="test-time">744ms</span>
+            <span class="test-time">800ms</span>
           </div>
           
         </div></div>
@@ -698,7 +664,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <script>
-    const history = [{"date":"2026-05-25T04:41:46.408Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":87},{"date":"2026-05-25T04:43:24.600Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":84},{"date":"2026-07-26T16:58:50.152Z","sha":"19624f0","passed":28,"failed":3,"total":31,"passRate":90,"duration":76},{"date":"2026-07-26T17:08:43.715Z","sha":"b57fe39","passed":28,"failed":3,"total":31,"passRate":90,"duration":82},{"date":"2026-07-26T17:17:19.322Z","sha":"e7bee97","passed":28,"failed":3,"total":31,"passRate":90,"duration":20}];
+    const history = [{"date":"2026-05-25T04:41:46.408Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":87},{"date":"2026-05-25T04:43:24.600Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":84},{"date":"2026-07-26T16:58:50.152Z","sha":"19624f0","passed":28,"failed":3,"total":31,"passRate":90,"duration":76},{"date":"2026-07-26T17:08:43.715Z","sha":"b57fe39","passed":28,"failed":3,"total":31,"passRate":90,"duration":82},{"date":"2026-07-26T17:17:19.322Z","sha":"e7bee97","passed":28,"failed":3,"total":31,"passRate":90,"duration":20},{"date":"2026-07-26T17:23:50.736Z","sha":"e112155","passed":31,"failed":0,"total":31,"passRate":100,"duration":20}];
 
     const labels = history.map(r => {
       const d = new Date(r.date);
