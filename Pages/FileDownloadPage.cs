@@ -15,8 +15,11 @@ public class FileDownloadPage
         _page = page;
     }
 
+    // Exact = true matters here: GetByRole's Name match is a substring match by default,
+    // so a locator for "test.txt" would also match an unrelated file like "upload-test.txt"
+    // sitting on the same shared server, causing a "strict mode violation" (multiple matches).
     private ILocator LinkFor(string fileName) =>
-        _page.GetByRole(AriaRole.Link, new() { Name = fileName });
+        _page.GetByRole(AriaRole.Link, new() { Name = fileName, Exact = true });
 
     public async Task NavigateAsync()
     {
