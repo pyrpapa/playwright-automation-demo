@@ -24,7 +24,11 @@ public class FileUploadPage
     {
         await _page.GotoAsync(TestConfig.UiBaseUrl + "/upload");
         await FileInput.ClickAsync();
-        await _page.SetInputFilesAsync("input[type='file']", "C:\\Projects\\playwright-automation-demo\\Files\\test.txt");
+        // Relative to the test binaries' output directory (see the Files\test.txt
+        // CopyToOutputDirectory entry in the .csproj) so this works on any OS/runner,
+        // not just the original machine.
+        var uploadFilePath = Path.Combine(AppContext.BaseDirectory, "Files", "test.txt");
+        await _page.SetInputFilesAsync("input[type='file']", uploadFilePath);
         // Wait for 2 seconds
         await _page.WaitForTimeoutAsync(2000);
         await UploadButton.ClickAsync();
@@ -37,7 +41,8 @@ public class FileUploadPage
         await FileInput.ClickAsync();
         try
         {
-            await _page.SetInputFilesAsync("input[type='file']", "C:\\Projects\\playwright-automation-demo\\Files\\notexist.txt");
+            var missingFilePath = Path.Combine(AppContext.BaseDirectory, "Files", "notexist.txt");
+            await _page.SetInputFilesAsync("input[type='file']", missingFilePath);
             return false; // if we get here, no exception was thrown
         }
         catch (FileNotFoundException)
@@ -46,5 +51,5 @@ public class FileUploadPage
         }
     }
 
-    
+
 }

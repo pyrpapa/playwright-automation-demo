@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -25,6 +25,15 @@
 
   <ItemGroup>
     <Using Include="NUnit.Framework" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Copied next to the test binaries so FileUploadPage can reference it with a
+         portable, relative path (AppContext.BaseDirectory) instead of a hardcoded
+         Windows path - required for the tests to run on Linux CI runners. -->
+    <None Include="Files\test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@ param(
     [string]$command
 )
 
-$logger = '--logger "junit;LogFileName=Test-Results.xml"'
+$logger = '--logger "junit;LogFileName=TestResults.xml"'
 
 function Invoke-Test([string]$filter = "") {
     if ($filter) {
@@ -10,7 +10,7 @@ function Invoke-Test([string]$filter = "") {
     } else {
         Invoke-Expression "dotnet test $logger"
     }
-    node scripts/generate-report.js
+    node Scripts/generate-report.js
 }
 
 switch ($command) {
@@ -18,7 +18,7 @@ switch ($command) {
     "test-api"    { Invoke-Test "FullyQualifiedName~API" }
     "test-ui"     { Invoke-Test "FullyQualifiedName~UI" }
     "test-db"     { Invoke-Test "FullyQualifiedName~Database" }
-    "report"      { node scripts/generate-report.js }
+    "report"      { node Scripts/generate-report.js }
     "clean"       { dotnet clean }
     "build"       { dotnet build }
     "rebuild"     { dotnet clean; dotnet build }
