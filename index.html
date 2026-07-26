@@ -253,10 +253,10 @@
     <div class="repo-label">playwright-automation-demo</div>
     <h1>Test results</h1>
     <div class="meta-line">
-      <span>commit <span style="color:var(--accent)">19624f0</span></span>
+      <span>commit <span style="color:var(--accent)">b57fe39</span></span>
       <span class="meta-sep">·</span>
-      <span>Sun, 26 Jul 2026 16:58:50 GMT</span>
-      <span class="meta-sep">·</span><a href="https://github.com/pyrpapa/playwright-automation-demo/actions/runs/30211517511" target="_blank">view run ↗</a>
+      <span>Sun, 26 Jul 2026 17:08:43 GMT</span>
+      <span class="meta-sep">·</span><a href="https://github.com/pyrpapa/playwright-automation-demo/actions/runs/30211866762" target="_blank">view run ↗</a>
     </div>
   </header>
 
@@ -284,13 +284,13 @@
     </div>
     <div class="stat">
       <div class="stat-label">Duration</div>
-      <div class="stat-value neutral" style="font-size:20px">75.51s</div>
+      <div class="stat-value neutral" style="font-size:20px">82.30s</div>
     </div>
   </div>
 
   <main class="main">
 
-    <div class="section-label">Run history — last 3 runs</div>
+    <div class="section-label">Run history — last 4 runs</div>
     <div class="history-chart">
       <canvas id="historyChart" height="90"></canvas>
     </div>
@@ -311,16 +311,13 @@
           <div class="test-row-header">
             <span class="icon fail-icon">✗</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">5.21s</span>
+            <span class="test-time">5.50s</span>
           </div>
           <div class="error-block">
             <div class="error-message">Microsoft.Playwright.PlaywrightException : Locator expected to be visible&amp;#xA;Error: element(s) not found &amp;#xA;Call log:&amp;#xA;  - Expect &quot;ToBeVisibleAsync&quot; with timeout 5000ms&amp;#xA;  - waiting for GetByRole(AriaRole.Link, new() { Name = &quot;sample_upload.txt&quot; })</div>
             <pre class="stack-trace">at Microsoft.Playwright.Core.AssertionsBase.ExpectImplAsync(String expression, FrameExpectOptions expectOptions, Object expected, String message, String title) in /_/src/Playwright/Core/AssertionsBase.cs:line 90
    at Microsoft.Playwright.Core.AssertionsBase.ExpectImplAsync(String expression, ExpectedTextValue[] expectedText, Object expected, String message, String title, FrameExpectOptions options) in /_/src/Playwright/Core/AssertionsBase.cs:line 66
    at PlaywrightAutomationDemo.Tests.FileDownloadTests.NavigateAsync_OnPageLoad_SampleUploadTxtLinkIsVisible() in /home/runner/work/playwright-automation-demo/playwright-automation-demo/Tests/UI/FileDownloadTests.cs:line 33
-   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()
-   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)
-   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
    at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
    at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
    at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
@@ -332,7 +329,7 @@
           <div class="test-row-header">
             <span class="icon fail-icon">✗</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">30.33s</span>
+            <span class="test-time">30.66s</span>
           </div>
           <div class="error-block">
             <div class="error-message">System.TimeoutException : Timeout 30000ms exceeded.&amp;#xA;Call log:&amp;#xA;  - waiting for GetByRole(AriaRole.Link, new() { Name = &quot;sample_upload.txt&quot; })</div>
@@ -340,9 +337,6 @@
    at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 505
    at PlaywrightAutomationDemo.Tests.FileDownloadPage.ClickSampleUploadTxtAndVerifyDownloadAsync() in /home/runner/work/playwright-automation-demo/playwright-automation-demo/Pages/FileDownloadPage.cs:line 31
    at PlaywrightAutomationDemo.Tests.FileDownloadTests.ClickSampleUploadTxtAndVerifyDownloadAsync_ValidFileLink_DownloadPathIsNotEmpty() in /home/runner/work/playwright-automation-demo/playwright-automation-demo/Tests/UI/FileDownloadTests.cs:line 47
-   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()
-   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)
-   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
    at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
    at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
    at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
@@ -354,7 +348,7 @@
           <div class="test-row-header">
             <span class="icon fail-icon">✗</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">30.24s</span>
+            <span class="test-time">30.61s</span>
           </div>
           <div class="error-block">
             <div class="error-message">System.TimeoutException : Timeout 30000ms exceeded.&amp;#xA;Call log:&amp;#xA;  - waiting for GetByRole(AriaRole.Link, new() { Name = &quot;sample_upload.txt&quot; })</div>
@@ -376,7 +370,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">325ms</span>
+            <span class="test-time">654ms</span>
           </div>
           
         </div>
@@ -384,7 +378,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">212ms</span>
+            <span class="test-time">505ms</span>
           </div>
           
         </div></div>
@@ -403,7 +397,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.SmokeTests</span>
-            <span class="test-time">1.72s</span>
+            <span class="test-time">1.27s</span>
           </div>
           
         </div>
@@ -411,7 +405,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.SmokeTests</span>
-            <span class="test-time">252ms</span>
+            <span class="test-time">631ms</span>
           </div>
           
         </div>
@@ -419,7 +413,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.SmokeTests</span>
-            <span class="test-time">382ms</span>
+            <span class="test-time">759ms</span>
           </div>
           
         </div></div>
@@ -438,7 +432,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.API.ApiTests</span>
-            <span class="test-time">550ms</span>
+            <span class="test-time">750ms</span>
           </div>
           
         </div></div>
@@ -457,7 +451,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">23ms</span>
+            <span class="test-time">54ms</span>
           </div>
           
         </div>
@@ -465,7 +459,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">37ms</span>
+            <span class="test-time">115ms</span>
           </div>
           
         </div>
@@ -473,7 +467,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">26ms</span>
+            <span class="test-time">54ms</span>
           </div>
           
         </div>
@@ -481,7 +475,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">25ms</span>
+            <span class="test-time">55ms</span>
           </div>
           
         </div></div>
@@ -500,7 +494,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.Database.DatabaseTests</span>
-            <span class="test-time">40ms</span>
+            <span class="test-time">39ms</span>
           </div>
           
         </div>
@@ -543,7 +537,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">315ms</span>
+            <span class="test-time">661ms</span>
           </div>
           
         </div>
@@ -551,7 +545,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">446ms</span>
+            <span class="test-time">716ms</span>
           </div>
           
         </div>
@@ -559,7 +553,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">232ms</span>
+            <span class="test-time">532ms</span>
           </div>
           
         </div>
@@ -567,7 +561,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">214ms</span>
+            <span class="test-time">544ms</span>
           </div>
           
         </div></div>
@@ -586,7 +580,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.BasicAuthTests</span>
-            <span class="test-time">249ms</span>
+            <span class="test-time">368ms</span>
           </div>
           
         </div>
@@ -594,7 +588,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.BasicAuthTests</span>
-            <span class="test-time">232ms</span>
+            <span class="test-time">543ms</span>
           </div>
           
         </div></div>
@@ -613,7 +607,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.CheckboxTests</span>
-            <span class="test-time">261ms</span>
+            <span class="test-time">574ms</span>
           </div>
           
         </div>
@@ -621,7 +615,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.CheckboxTests</span>
-            <span class="test-time">268ms</span>
+            <span class="test-time">568ms</span>
           </div>
           
         </div>
@@ -629,7 +623,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.CheckboxTests</span>
-            <span class="test-time">246ms</span>
+            <span class="test-time">596ms</span>
           </div>
           
         </div></div>
@@ -648,7 +642,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.FileUpload</span>
-            <span class="test-time">245ms</span>
+            <span class="test-time">566ms</span>
           </div>
           
         </div>
@@ -656,7 +650,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.FileUpload</span>
-            <span class="test-time">2.35s</span>
+            <span class="test-time">2.70s</span>
           </div>
           
         </div></div>
@@ -675,7 +669,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.LoginTests</span>
-            <span class="test-time">369ms</span>
+            <span class="test-time">741ms</span>
           </div>
           
         </div>
@@ -683,7 +677,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.LoginTests</span>
-            <span class="test-time">364ms</span>
+            <span class="test-time">745ms</span>
           </div>
           
         </div>
@@ -691,7 +685,7 @@
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
             <span class="test-name">PlaywrightAutomationDemo.Tests.UI.LoginTests</span>
-            <span class="test-time">345ms</span>
+            <span class="test-time">794ms</span>
           </div>
           
         </div></div>
@@ -705,7 +699,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <script>
-    const history = [{"date":"2026-05-25T04:41:46.408Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":87},{"date":"2026-05-25T04:43:24.600Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":84},{"date":"2026-07-26T16:58:50.152Z","sha":"19624f0","passed":28,"failed":3,"total":31,"passRate":90,"duration":76}];
+    const history = [{"date":"2026-05-25T04:41:46.408Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":87},{"date":"2026-05-25T04:43:24.600Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":84},{"date":"2026-07-26T16:58:50.152Z","sha":"19624f0","passed":28,"failed":3,"total":31,"passRate":90,"duration":76},{"date":"2026-07-26T17:08:43.715Z","sha":"b57fe39","passed":28,"failed":3,"total":31,"passRate":90,"duration":82}];
 
     const labels = history.map(r => {
       const d = new Date(r.date);
