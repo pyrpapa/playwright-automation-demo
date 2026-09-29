@@ -8,6 +8,7 @@ $reportJs   = Join-Path $PSScriptRoot "Scripts\generate-report.js"
 $dashboard  = Join-Path $PSScriptRoot "dashboard\index.html"
 
 function Invoke-Test([string]$Filter = "") {
+    Remove-Item (Join-Path $PSScriptRoot "TestResults\TestResults.xml") -ErrorAction SilentlyContinue
     $dotnetArgs = @('test', '--logger', 'junit;LogFileName=TestResults.xml')
     if ($Filter) { $dotnetArgs += @('--filter', $Filter) }
 

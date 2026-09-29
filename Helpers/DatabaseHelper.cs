@@ -8,7 +8,7 @@ namespace PlaywrightAutomationDemo.Helpers;
 
 public class DatabaseHelper
 {
-    public const string ConnectionString = "Data Source=testdb.sqlite";
+    private static readonly string ConnectionString = $"Data Source={TestConfig.DbPath}";
 
     public static void Initialize()
     {
@@ -62,9 +62,34 @@ public class DatabaseHelper
     public static int CountDuplicateIds() =>
         Scalar("SELECT COUNT(*) FROM (SELECT Id FROM Posts GROUP BY Id HAVING COUNT(*) > 1)");
 
-    private static int Scalar(string sql)
+    public static int CountMissingTitles() =>
+        Scalar("SELECT COUNT(*) FROM (SELECT Id FROM Posts WHERE Title IS NULL OR Title = '')");
+
+
+    private class UserPostCount
+    {
+        public int UserId { get; set; }
+        public int PostCount { get; set; }
+    }
+
+    public static Dictionary<int, int> GetPostCountsByUser()
     {
         using var connection = new SqliteConnection(ConnectionString);
-        return connection.ExecuteScalar<int>(sql);
+        return connection
+            .Query<UserPostCount>("SELECT UserId, COUNT(*) AS PostCount FROM Posts GROUP BY UserId")
+            .ToDictionary(r => r.UserId, r => r.PostCount);
+    }
+
+    private static int Scalar(string sql)
+    {
+        try
+        {
+            using var connection = new SqliteConnection(ConnectionString);
+            return connection.ExecuteScalar<int>(sql);
+        }
+        catch (SqliteException ex)
+        {
+            throw new InvalidOperationException($"Query failed: {sql}\n{ex.Message}", ex);
+        }
     }
 }
