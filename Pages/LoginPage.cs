@@ -1,5 +1,7 @@
 using Microsoft.Playwright;
 using PlaywrightAutomationDemo.Config;
+using static Microsoft.Playwright.Assertions;
+
 
 namespace PlaywrightAutomationDemo.Pages;
 
@@ -32,13 +34,13 @@ public class LoginPage
         await LoginButton.ClickAsync();
     }
 
-    public async Task<bool> IsLoginSuccessfulAsync()
+    public async Task AssertLoginSuccessfulAsync()
     {
-        return await SuccessMessage.IsVisibleAsync();
+        await Expect(SuccessMessage).ToBeVisibleAsync();
     }
 
-    public async Task<bool> IsLoginFailedAsync()
+    public async Task AssertLoginUnsuccessfulAsync()
     {
-        return await ErrorMessage.IsVisibleAsync();
+        await Expect(ErrorMessage).ToBeVisibleAsync();
     }
 }

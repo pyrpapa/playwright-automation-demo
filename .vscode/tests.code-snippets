@@ -1,0 +1,38 @@
+{
+  "API Test Class": {
+    "scope": "csharp",
+    "prefix": "apitest",
+    "body": [
+      "using Microsoft.Playwright;",
+      "using Microsoft.Playwright.NUnit;",
+      "using FluentAssertions;",
+      "using Newtonsoft.Json;",
+      "using PlaywrightAutomationDemo.Config;",
+      "using PlaywrightAutomationDemo.Helpers;",
+      "using PlaywrightAutomationDemo.Models;",
+      "",
+      "namespace PlaywrightAutomationDemo.Tests.${1:Integration};",
+      "",
+      "[TestFixture]",
+      "public class ${TM_FILENAME_BASE} : PlaywrightTest",
+      "{",
+      "    private IAPIRequestContext _apiContext = null!;",
+      "",
+      "    [SetUp]",
+      "    public async Task SetUpAsync()",
+      "    {",
+      "        _apiContext = await Playwright.APIRequest.NewContextAsync(new() { BaseURL = TestConfig.BaseUrl });",
+      "    }",
+      "",
+      "    [TearDown]",
+      "    public async Task TearDownAsync() => await _apiContext.DisposeAsync();",
+      "",
+      "    [Test]",
+      "    public async Task ${2:TestName}()",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ]
+  }
+}

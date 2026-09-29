@@ -20,22 +20,22 @@ public class LoginTests : PageTest
     {
         await _loginPage.NavigateAsync();
         await _loginPage.LoginAsync("tomsmith", "SuperSecretPassword!");
-        Assert.That(await _loginPage.IsLoginSuccessfulAsync(), Is.True);
+        await _loginPage.AssertLoginSuccessfulAsync();
     }
 
     [Test]
-    public async Task FailedLoginWithBadPassword()
+    public async Task FailedLoginWithIncorrectPassword()
     {
         await _loginPage.NavigateAsync();
         await _loginPage.LoginAsync("tomsmith", "wrongpassword");
-        Assert.That(await _loginPage.IsLoginFailedAsync(), Is.True);
+        await _loginPage.AssertLoginUnsuccessfulAsync();
     }
 
     [Test]
-    public async Task FailedLoginWithBadUsername()
+    public async Task FailedLoginWithIncorrectUsername()
     {
         await _loginPage.NavigateAsync();
         await _loginPage.LoginAsync("wronguser", "SuperSecretPassword!");
-        Assert.That(await _loginPage.IsLoginFailedAsync(), Is.True);
+        await _loginPage.AssertLoginUnsuccessfulAsync();
     }
 }

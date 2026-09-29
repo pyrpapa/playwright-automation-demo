@@ -6,6 +6,7 @@ using PlaywrightAutomationDemo.Models;
 namespace PlaywrightAutomationDemo.Tests.Database;
 
 [TestFixture]
+//create a small database file on machine, put rows in, read them back, and check the rows are right
 public class DatabaseTests
 {
     [OneTimeSetUp]

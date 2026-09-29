@@ -16,7 +16,7 @@ if (!fs.existsSync(xmlPath)) {
 const xml = fs.readFileSync(xmlPath, "utf8");
 
 function attr(str, name) {
-  const m = str.match(new RegExp(`${name}="([^"]*)"`));
+  const m = str.match(new RegExp(`\\b${name}="([^"]*)"`));
   return m ? m[1] : "";
 }
 
@@ -27,8 +27,8 @@ function parseTests(xml) {
   while ((m = re.exec(xml)) !== null) {
     const attrs = m[1];
     const inner = m[2] || "";
-    const errorMatch = inner.match(/<error message="([^"]*)">([\s\S]*?)<\/error>/);
-    const failureMatch = inner.match(/<failure message="([^"]*)">([\s\S]*?)<\/failure>/);
+    const errorMatch   = inner.match(/<error\b[^>]*message="([^"]*)"[^>]*>([\s\S]*?)<\/error>/);
+    const failureMatch = inner.match(/<failure\b[^>]*message="([^"]*)"[^>]*>([\s\S]*?)<\/failure>/);
     const errBlock = errorMatch || failureMatch;
 
     const rawMessage = errBlock
@@ -38,12 +38,23 @@ function parseTests(xml) {
       ? errBlock[2].replace(/&#xD;&#xA;/g, "\n").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").trim()
       : null;
 
+    const outMatch = inner.match(/<system-out>([\s\S]*?)<\/system-out>/);
+    const rawOutput = outMatch
+      ? outMatch[1]
+          .replace(/^\s*<!\[CDATA\[|\]\]>\s*$/g, "")
+          .replace(/&#xD;&#xA;|&#xA;/g, "\n").replace(/&#xD;/g, "")
+          .replace(/&quot;/g, '"').replace(/&apos;/g, "'")
+          .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&")
+          .trim()
+      : null;
+
     tests.push({
       classname: attr(attrs, "classname"),
       name: attr(attrs, "name"),
       time: parseFloat(attr(attrs, "time") || "0"),
       status: errBlock ? "failed" : "passed",
       message: rawMessage,
+      output: rawOutput,
       trace: rawTrace,
     });
   }
@@ -128,9 +139,16 @@ function suiteCard(suiteName, tests) {
 
       const errorBlock = t.message
         ? `<div class="error-block">
-            <div class="error-message">${escapeHtml(t.message.split("\n")[0])}</div>
+            <div class="error-message">${escapeHtml(t.message)}</div>
             ${t.trace ? `<pre class="stack-trace">${escapeHtml(t.trace)}</pre>` : ""}
            </div>`
+        : "";
+
+      const outputBlock = t.output
+        ? `<details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">${escapeHtml(t.output)}</pre>
+          </details>`
         : "";
 
       return `
@@ -141,6 +159,7 @@ function suiteCard(suiteName, tests) {
             <span class="test-time">${formatTime(t.time)}</span>
           </div>
           ${errorBlock}
+          ${outputBlock}
         </div>`;
     })
     .join("");
@@ -406,6 +425,27 @@ const html = `<!DOCTYPE html>
       padding: 8px;
       border-radius: 4px;
       border: 1px solid var(--border);
+    }
+
+    .test-output {
+      margin: 0 16px 12px 42px;
+    }
+
+    .test-output summary {
+      cursor: pointer;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      padding: 2px 0;
+      user-select: none;
+    }
+
+    .test-output summary:hover { color: var(--accent); }
+
+    .test-output pre {
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--text);
     }
 
     .footer {
