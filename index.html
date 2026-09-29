@@ -233,6 +233,27 @@
       border: 1px solid var(--border);
     }
 
+    .test-output {
+      margin: 0 16px 12px 42px;
+    }
+
+    .test-output summary {
+      cursor: pointer;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      padding: 2px 0;
+      user-select: none;
+    }
+
+    .test-output summary:hover { color: var(--accent); }
+
+    .test-output pre {
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--text);
+    }
+
     .footer {
       border-top: 1px solid var(--border);
       padding: 20px 40px;
@@ -253,10 +274,10 @@
     <div class="repo-label">playwright-automation-demo</div>
     <h1>Test results</h1>
     <div class="meta-line">
-      <span>commit <span style="color:var(--accent)">e112155</span></span>
+      <span>commit <span style="color:var(--accent)">3aa793f</span></span>
       <span class="meta-sep">·</span>
-      <span>Sun, 26 Jul 2026 17:23:50 GMT</span>
-      <span class="meta-sep">·</span><a href="https://github.com/pyrpapa/playwright-automation-demo/actions/runs/30212420654" target="_blank">view run ↗</a>
+      <span>Tue, 29 Sep 2026 17:42:21 GMT</span>
+      <span class="meta-sep">·</span><a href="https://github.com/pyrpapa/playwright-automation-demo/actions/runs/36606667892" target="_blank">view run ↗</a>
     </div>
   </header>
 
@@ -272,7 +293,7 @@
     </div>
     <div class="stat">
       <div class="stat-label">Passed</div>
-      <div class="stat-value pass">31</div>
+      <div class="stat-value pass">32</div>
     </div>
     <div class="stat">
       <div class="stat-label">Failed</div>
@@ -280,22 +301,22 @@
     </div>
     <div class="stat">
       <div class="stat-label">Total tests</div>
-      <div class="stat-value neutral">31</div>
+      <div class="stat-value neutral">32</div>
     </div>
     <div class="stat">
       <div class="stat-label">Duration</div>
-      <div class="stat-value neutral" style="font-size:20px">19.90s</div>
+      <div class="stat-value neutral" style="font-size:20px">0ms</div>
     </div>
   </div>
 
   <main class="main">
 
-    <div class="section-label">Run history — last 6 runs</div>
+    <div class="section-label">Run history — last 7 runs</div>
     <div class="history-chart">
       <canvas id="historyChart" height="90"></canvas>
     </div>
 
-    <div class="section-label">Test suites — 10 suites</div>
+    <div class="section-label">Test suites — 11 suites</div>
     
     <div class="suite-card ">
       <div class="suite-header">
@@ -310,25 +331,28 @@
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.SmokeTests</span>
-            <span class="test-time">2.54s</span>
+            <span class="test-name">HomePageLoads</span>
+            <span class="test-time">922ms</span>
           </div>
+          
           
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.SmokeTests</span>
-            <span class="test-time">662ms</span>
+            <span class="test-name">LoginPageVisible</span>
+            <span class="test-time">240ms</span>
           </div>
+          
           
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.SmokeTests</span>
-            <span class="test-time">816ms</span>
+            <span class="test-name">SuccessfulLogin</span>
+            <span class="test-time">373ms</span>
           </div>
+          
           
         </div></div>
     </div>
@@ -345,10 +369,69 @@
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.API.ApiTests</span>
-            <span class="test-time">657ms</span>
+            <span class="test-name">CRUD_Post</span>
+            <span class="test-time">1.64s</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">POST response body: {
+  &quot;title&quot;: &quot;Test Post&quot;,
+  &quot;body&quot;: &quot;Test Body&quot;,
+  &quot;userId&quot;: 1,
+  &quot;id&quot;: 101
+}
+GET response body: {
+  &quot;userId&quot;: 1,
+  &quot;id&quot;: 1,
+  &quot;title&quot;: &quot;sunt aut facere repellat provident occaecati excepturi optio reprehenderit&quot;,
+  &quot;body&quot;: &quot;quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto&quot;
+}
+     Warning:
+     The component &quot;Fluent Assertions&quot; is governed by the rules defined in the Xceed License Agreement and
+     the Xceed Fluent Assertions Community License. You may use Fluent Assertions free of charge for
+     non-commercial use only. An active subscription is required to use Fluent Assertions for commercial use.
+
+     Please contact Xceed Sales mailto:sales@xceed.com to acquire a subscription at a very low cost.
+
+     A paid commercial license supports the development and continued increasing support of
+     Fluent Assertions users under both commercial and community licenses. Help us
+     keep Fluent Assertions at the forefront of unit testing.
+
+     For more information, visit https://xceed.com/products/unit-testing/fluent-assertions/
+PUT response body: {
+  &quot;title&quot;: &quot;Updated Title&quot;,
+  &quot;body&quot;: &quot;Updated Body&quot;,
+  &quot;userId&quot;: 1,
+  &quot;id&quot;: 1
+}
+DELETE response body: {}</pre>
+          </details>
+        </div></div>
+    </div>
+    <div class="suite-card ">
+      <div class="suite-header">
+        <span class="suite-name">ApiToDbReconciliation</span>
+        <div class="suite-meta">
+          
+          <span class="badge badge-pass">1 passed</span>
+          <span class="badge badge-count">1 total</span>
+        </div>
+      </div>
+      <div class="suite-tests">
+        <div class="test-row passed">
+          <div class="test-row-header">
+            <span class="icon pass-icon">✓</span>
+            <span class="test-name">Api_To_Db_Reconciliation</span>
+            <span class="test-time">240ms</span>
+          </div>
+          
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">API posts: 100 | DB rows: 100
+Duplicate Ids: 0
+Spot check post 1: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit'</pre>
+          </details>
         </div></div>
     </div>
     <div class="suite-card ">
@@ -364,34 +447,65 @@
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">53ms</span>
+            <span class="test-name">Negative_Delete</span>
+            <span class="test-time">195ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">DELETE response body: {}
+Unable to make DELETE request to delete comment with ID 99999 - comment not found.</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">28ms</span>
+            <span class="test-name">Negative_Get</span>
+            <span class="test-time">405ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">GET response body: {}
+Unable to make GET request to Read comment with ID 99999 - comment not found.</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">55ms</span>
+            <span class="test-name">Negative_Post</span>
+            <span class="test-time">203ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">POST response body: {}
+Unable to make POST request to Create comment with ID 99999.</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.API.NegativeApiTests</span>
-            <span class="test-time">120ms</span>
+            <span class="test-name">Negative_Put</span>
+            <span class="test-time">201ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">PUT response body: TypeError: Cannot read properties of undefined (reading 'id')
+    at update (/app/node_modules/json-server/lib/server/router/plural.js:262:24)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/app/node_modules/express/lib/router/route.js:137:13)
+    at next (/app/node_modules/express/lib/router/route.js:131:14)
+    at Route.dispatch (/app/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at /app/node_modules/express/lib/router/index.js:281:22
+    at param (/app/node_modules/express/lib/router/index.js:354:14)
+    at param (/app/node_modules/express/lib/router/index.js:365:14)
+    at router.process_params (/app/node_modules/express/lib/router/index.js:410:3)
+PUT status: 500
+Unable to make PUT request to Update comment with ID 99999 - comment not found.</pre>
+          </details>
         </div></div>
     </div>
     <div class="suite-card ">
@@ -407,34 +521,54 @@
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.Database.DatabaseTests</span>
-            <span class="test-time">42ms</span>
+            <span class="test-name">DB_CreatePost</span>
+            <span class="test-time">3ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">Created Post ID: 1
+Title: Test Title
+Body: Test Body
+UserId: 1</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.Database.DatabaseTests</span>
-            <span class="test-time">5ms</span>
+            <span class="test-name">DB_DeletePost</span>
+            <span class="test-time">3ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">Post with ID 3 successfully deleted - returned null: True</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.Database.DatabaseTests</span>
+            <span class="test-name">DB_ReadNonExistent</span>
             <span class="test-time">1ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">Success: Post with ID 99999 does not exist - returned null: True</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.Database.DatabaseTests</span>
+            <span class="test-name">DB_ReadPost</span>
             <span class="test-time">2ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">Read Post ID: 2
+Title: Read Title</pre>
+          </details>
         </div></div>
     </div>
     <div class="suite-card ">
@@ -450,33 +584,37 @@
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">682ms</span>
+            <span class="test-name">DragAndDrop_DragAOntoB_ColumnsSwap</span>
+            <span class="test-time">329ms</span>
           </div>
+          
           
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">750ms</span>
+            <span class="test-name">DragAndDrop_DragAOntoB_ThenDragBack_ColumnsRestored</span>
+            <span class="test-time">399ms</span>
           </div>
+          
           
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">585ms</span>
+            <span class="test-name">DragAndDrop_InitialState_ColumnAIsOnLeft</span>
+            <span class="test-time">211ms</span>
           </div>
+          
           
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.DragAndDropTests</span>
-            <span class="test-time">581ms</span>
+            <span class="test-name">DragAndDrop_PageLoads_HeadingIsVisible</span>
+            <span class="test-time">204ms</span>
           </div>
+          
           
         </div></div>
     </div>
@@ -493,42 +631,62 @@
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">815ms</span>
+            <span class="test-name">ClickSampleUploadTxtAndVerifyDownloadAsync_ValidFileLink_DownloadedFileExists</span>
+            <span class="test-time">442ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">PASS: FileDownloadTests - ClickSampleUploadTxtAndVerifyDownloadAsync_ValidFileLink_DownloadedFileExists - Downloaded file exists on disk at path: {downloadedFilePath}</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">857ms</span>
+            <span class="test-name">ClickSampleUploadTxtAndVerifyDownloadAsync_ValidFileLink_DownloadPathIsNotEmpty</span>
+            <span class="test-time">423ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">PASS: FileDownloadTests - ClickSampleUploadTxtAndVerifyDownloadAsync_ValidFileLink_DownloadPathIsNotEmpty - Download path returned is not empty</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">760ms</span>
+            <span class="test-name">NavigateAsync_OnPageLoad_CorrectUrlIsLoaded</span>
+            <span class="test-time">355ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">PASS: FileDownloadTests - NavigateAsync_OnPageLoad_CorrectUrlIsLoaded - Page URL ends with /download as expected</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">731ms</span>
+            <span class="test-name">NavigateAsync_OnPageLoad_DownloadPageTitleIsVisible</span>
+            <span class="test-time">349ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">PASS: FileDownloadTests - NavigateAsync_OnPageLoad_DownloadPageTitleIsVisible - Page title matches 'The Internet' on initial load</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.FileDownloadTests</span>
-            <span class="test-time">777ms</span>
+            <span class="test-name">NavigateAsync_OnPageLoad_SampleUploadTxtLinkIsVisible</span>
+            <span class="test-time">346ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">PASS: FileDownloadTests - NavigateAsync_OnPageLoad_SampleUploadTxtLinkIsVisible - playwright-download-f9e82efee9dd437191d54b55a566af64.txt link is visible on initial page load</pre>
+          </details>
         </div></div>
     </div>
     <div class="suite-card ">
@@ -544,18 +702,26 @@
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.UI.BasicAuthTests</span>
-            <span class="test-time">287ms</span>
+            <span class="test-name">BasicAuth_Failure</span>
+            <span class="test-time">185ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">Basic authentication failed with incorrect credentials.</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.UI.BasicAuthTests</span>
-            <span class="test-time">606ms</span>
+            <span class="test-name">BasicAuth_Success</span>
+            <span class="test-time">217ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">Basic authentication successful with correct credentials.</pre>
+          </details>
         </div></div>
     </div>
     <div class="suite-card ">
@@ -571,26 +737,37 @@
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.UI.CheckboxTests</span>
-            <span class="test-time">606ms</span>
+            <span class="test-name">CheckBothCheckboxes</span>
+            <span class="test-time">254ms</span>
           </div>
+          
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">First checked: True
+Second checked: True</pre>
+          </details>
+        </div>
+        <div class="test-row passed">
+          <div class="test-row-header">
+            <span class="icon pass-icon">✓</span>
+            <span class="test-name">ToggleFirstCheckbox</span>
+            <span class="test-time">248ms</span>
+          </div>
+          
           
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.UI.CheckboxTests</span>
-            <span class="test-time">614ms</span>
+            <span class="test-name">UncheckBothCheckboxes</span>
+            <span class="test-time">251ms</span>
           </div>
           
-        </div>
-        <div class="test-row passed">
-          <div class="test-row-header">
-            <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.UI.CheckboxTests</span>
-            <span class="test-time">580ms</span>
-          </div>
-          
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">First unchecked: False
+Second unchecked: False</pre>
+          </details>
         </div></div>
     </div>
     <div class="suite-card ">
@@ -606,18 +783,26 @@
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.UI.FileUpload</span>
-            <span class="test-time">594ms</span>
+            <span class="test-name">FileUploadFailure</span>
+            <span class="test-time">238ms</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">Unable to upload file due to Internal Server Error.</pre>
+          </details>
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.UI.FileUpload</span>
-            <span class="test-time">2.70s</span>
+            <span class="test-name">FileUploadSuccess</span>
+            <span class="test-time">2.34s</span>
           </div>
           
+          <details class="test-output">
+            <summary>Output</summary>
+            <pre class="stack-trace">File uploaded successfully.</pre>
+          </details>
         </div></div>
     </div>
     <div class="suite-card ">
@@ -633,25 +818,28 @@
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.UI.LoginTests</span>
-            <span class="test-time">777ms</span>
+            <span class="test-name">FailedLoginWithIncorrectPassword</span>
+            <span class="test-time">327ms</span>
           </div>
+          
           
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.UI.LoginTests</span>
-            <span class="test-time">818ms</span>
+            <span class="test-name">FailedLoginWithIncorrectUsername</span>
+            <span class="test-time">352ms</span>
           </div>
+          
           
         </div>
         <div class="test-row passed">
           <div class="test-row-header">
             <span class="icon pass-icon">✓</span>
-            <span class="test-name">PlaywrightAutomationDemo.Tests.UI.LoginTests</span>
-            <span class="test-time">800ms</span>
+            <span class="test-name">SuccessfulLogin</span>
+            <span class="test-time">332ms</span>
           </div>
+          
           
         </div></div>
     </div>
@@ -664,7 +852,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <script>
-    const history = [{"date":"2026-05-25T04:41:46.408Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":87},{"date":"2026-05-25T04:43:24.600Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":84},{"date":"2026-07-26T16:58:50.152Z","sha":"19624f0","passed":28,"failed":3,"total":31,"passRate":90,"duration":76},{"date":"2026-07-26T17:08:43.715Z","sha":"b57fe39","passed":28,"failed":3,"total":31,"passRate":90,"duration":82},{"date":"2026-07-26T17:17:19.322Z","sha":"e7bee97","passed":28,"failed":3,"total":31,"passRate":90,"duration":20},{"date":"2026-07-26T17:23:50.736Z","sha":"e112155","passed":31,"failed":0,"total":31,"passRate":100,"duration":20}];
+    const history = [{"date":"2026-05-25T04:41:46.408Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":87},{"date":"2026-05-25T04:43:24.600Z","sha":"local","passed":28,"failed":3,"total":31,"passRate":90,"duration":84},{"date":"2026-07-26T16:58:50.152Z","sha":"19624f0","passed":28,"failed":3,"total":31,"passRate":90,"duration":76},{"date":"2026-07-26T17:08:43.715Z","sha":"b57fe39","passed":28,"failed":3,"total":31,"passRate":90,"duration":82},{"date":"2026-07-26T17:17:19.322Z","sha":"e7bee97","passed":28,"failed":3,"total":31,"passRate":90,"duration":20},{"date":"2026-07-26T17:23:50.736Z","sha":"e112155","passed":31,"failed":0,"total":31,"passRate":100,"duration":20},{"date":"2026-09-29T17:42:21.974Z","sha":"3aa793f","passed":32,"failed":0,"total":32,"passRate":100,"duration":0}];
 
     const labels = history.map(r => {
       const d = new Date(r.date);
